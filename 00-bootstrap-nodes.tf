@@ -10,16 +10,16 @@ provider "digitalocean" {
     version = "~> 0.1"
 }
 
-resource "digitalocean_droplet" "kube_master" {
+resource "digitalocean_droplet" "kube-master" {
     image = "${var.image}"
-    name = "kube_master"
+    name = "kube-master"
     region = "${var.region}"
     private_networking = true
-    size = "s-1vcpu-1gb"
+    size = "s-1vcpu-2gb"
     ssh_keys = ["${var.ssh_fingerprint}"]
 }
 
-resource "digitalocean_droplet" "kube_worker" {
+resource "digitalocean_droplet" "kube-worker" {
     count = "${var.workers}"
     image = "${var.image}"
     name = "${format("kube-worker-%03d", count.index + 1)}"
