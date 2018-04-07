@@ -1,0 +1,5 @@
+region="nyc3"
+image="coreos-stable"
+do_token="COPY-PASTE-FROM-DIGITAL-OCEAN-DASHBOARD"
+ssh_fingerprint="RUN-COMMAND: ssh-keygen -E MD5 -lf ~/.ssh/id_rsa.pub | awk '{print $2}' | sed 's/MD5://g"
+ssh_privatekey="/path/to/id_rsa"
