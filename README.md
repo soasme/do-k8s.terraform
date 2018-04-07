@@ -6,4 +6,4 @@ brew install terraform
 terraform init
 terraform plan
 terraform apply
-ANSIBLE_NOCOWS=1 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i kubespray/inventory/kube-cluster/hosts.ini  kubespray/cluster.yml
+ANSIBLE_CONFIG=./kubespray/ansible.cfg ANSIBLE_NOCOWS=1 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i kubespray/inventory/kube-cluster/hosts.ini kubespray/cluster.yml
